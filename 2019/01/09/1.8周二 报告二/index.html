@@ -7,13 +7,19 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="1.8周二 报告二这些天一直在天河二号上试探，这篇报告记录为数不多的成果。 这是我在天河上面个人文件夹的目录：  其中kitti_dataset是完整数据集，有约90G；kitti_dataset_clip是100M左右的小数据集。 目前能跑起来的是clip里的detection，数据集能完整循环一遍。而处理后的tracking clip仍然是原来的错误：  “””Traceback (most">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/01/09/1.8周二 报告二/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.8周二 报告二这些天一直在天河二号上试探，这篇报告记录为数不多的成果。 这是我在天河上面个人文件夹的目录：  其中kitti_dataset是完整数据集，有约90G；kitti_dataset_clip是100M左右的小数据集。 目前能跑起来的是clip里的detection，数据集能完整循环一遍。而处理后的tracking clip仍然是原来的错误：  “””Traceback (most">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/home/shycg/.config/Typora/typora-user-images/1546926999148.png">
+<meta property="og:updated_time" content="2019-01-08T06:18:47.550Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="1.8周二 报告二这些天一直在天河二号上试探，这篇报告记录为数不多的成果。 这是我在天河上面个人文件夹的目录：  其中kitti_dataset是完整数据集，有约90G；kitti_dataset_clip是100M左右的小数据集。 目前能跑起来的是clip里的detection，数据集能完整循环一遍。而处理后的tracking clip仍然是原来的错误：  “””Traceback (most">
+<meta name="twitter:image" content="http://yoursite.com/home/shycg/.config/Typora/typora-user-images/1546926999148.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,70 +66,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-12.27周四 报告一" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/09/12.27周四 报告一/" class="article-date">
-  <time datetime="2019-01-09T14:11:55.120Z" itemprop="datePublished">2019-01-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="12-27周四-报告一"><a href="#12-27周四-报告一" class="headerlink" title="12.27周四 报告一"></a>12.27周四 报告一</h1><p>好消息是，经过和天河技术部的多番交涉，我虽然还是没能争取到联网，但学会了如何从天河外部传入<code>whl</code>或者<code>tar.gz</code>文件然后断网装库。步骤是先在一台连着外网的电脑上下载wheel文件，然后拷到另一台连着天河的电脑，再用FileZilla上传到天河。在家比实验室节省每次重连vpn的时间。</p>
-<p>新的问题是在从module里面load <code>opencv</code>库的时候，无论是它的哪一个版本，都无法让程序找到这个库。解决办法是把它也用wheel装上。</p>
-<p>不过后来发现了有的wheel也需要联网，比如tensorflow的。但好在voxelnet需要的其他库都能这么装。</p>
-<p>目前进度是可以把voxelnet在<code>detection</code>的小数据集上跑起来了。</p>
-<p>下面准备把完整数据集传上去，包括检测和追踪的，并重新处理追踪数据集。</p>
-<blockquote>
-<p>千年以来，高高矗立在圣索菲亚大教堂顶上的十字架一直伸展着它的双臂，拥抱着人间的所有疾苦，现在，却倒在地上。 ——《群星闪耀》</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/09/12.27周四 报告一/" data-id="cjqp9j4y80003l6yx8f6a6r6e" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-1.11周五 报告三" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/09/1.11周五 报告三/" class="article-date">
-  <time datetime="2019-01-09T14:11:55.112Z" itemprop="datePublished">2019-01-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-11周五-报告三"><a href="#1-11周五-报告三" class="headerlink" title="1.11周五 报告三"></a>1.11周五 报告三</h1><p>三篇论文根据References里的引用关系，最早的是<code>Deep Feature Flow for Video Recognition</code>，然后是<code>Flow-Guided Feature Aggregation for Video Object Detection</code>，最后是<code>Towards High Performance Video Object Detection</code>。这份报告先记录第一篇论文，然后总结这两天的实验进展。</p>
-<h3 id="Deep-Feature-Flow-for-Video-Recognition"><a href="#Deep-Feature-Flow-for-Video-Recognition" class="headerlink" title="Deep Feature Flow for Video Recognition"></a>Deep Feature Flow for Video Recognition</h3><h3 id="实验进展"><a href="#实验进展" class="headerlink" title="实验进展"></a>实验进展</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/09/1.11周五 报告三/" data-id="cjqp9j4xv0000l6yxj5ywkrpr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-1.8周二 报告二" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-1.8周二 报告二" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/09/1.8周二 报告二/" class="article-date">
   <time datetime="2019-01-09T14:11:55.096Z" itemprop="datePublished">2019-01-09</time>
@@ -158,56 +101,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/09/hello-world/" class="article-date">
-  <time datetime="2019-01-09T12:28:37.471Z" itemprop="datePublished">2019-01-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2019/01/09/1.11周五 报告三/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          (no title)
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/09/hello-world/">Hello World</a>
-    </h1>
   
+    <a href="/2019/01/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/09/hello-world/" data-id="cjqp9j4y60002l6yxo6ui4nxv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         
