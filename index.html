@@ -62,97 +62,34 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-12.27周四 报告一" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-bisheriji" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/01/09/12.27周四 报告一/" class="article-date">
-  <time datetime="2019-01-09T14:11:55.120Z" itemprop="datePublished">2019-01-09</time>
+    <a href="/2019/01/09/bisheriji/" class="article-date">
+  <time datetime="2019-01-09T14:17:12.000Z" itemprop="datePublished">2019-01-09</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/09/bisheriji/">bisheriji</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="12-27周四-报告一"><a href="#12-27周四-报告一" class="headerlink" title="12.27周四 报告一"></a>12.27周四 报告一</h1><p>好消息是，经过和天河技术部的多番交涉，我虽然还是没能争取到联网，但学会了如何从天河外部传入<code>whl</code>或者<code>tar.gz</code>文件然后断网装库。步骤是先在一台连着外网的电脑上下载wheel文件，然后拷到另一台连着天河的电脑，再用FileZilla上传到天河。在家比实验室节省每次重连vpn的时间。</p>
-<p>新的问题是在从module里面load <code>opencv</code>库的时候，无论是它的哪一个版本，都无法让程序找到这个库。解决办法是把它也用wheel装上。</p>
-<p>不过后来发现了有的wheel也需要联网，比如tensorflow的。但好在voxelnet需要的其他库都能这么装。</p>
-<p>目前进度是可以把voxelnet在<code>detection</code>的小数据集上跑起来了。</p>
-<p>下面准备把完整数据集传上去，包括检测和追踪的，并重新处理追踪数据集。</p>
-<blockquote>
-<p>千年以来，高高矗立在圣索菲亚大教堂顶上的十字架一直伸展着它的双臂，拥抱着人间的所有疾苦，现在，却倒在地上。 ——《群星闪耀》</p>
-</blockquote>
+        <p>hello world</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/09/12.27周四 报告一/" data-id="cjqp9j4y80003l6yx8f6a6r6e" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-1.11周五 报告三" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/09/1.11周五 报告三/" class="article-date">
-  <time datetime="2019-01-09T14:11:55.112Z" itemprop="datePublished">2019-01-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-11周五-报告三"><a href="#1-11周五-报告三" class="headerlink" title="1.11周五 报告三"></a>1.11周五 报告三</h1><p>三篇论文根据References里的引用关系，最早的是<code>Deep Feature Flow for Video Recognition</code>，然后是<code>Flow-Guided Feature Aggregation for Video Object Detection</code>，最后是<code>Towards High Performance Video Object Detection</code>。这份报告先记录第一篇论文，然后总结这两天的实验进展。</p>
-<h3 id="Deep-Feature-Flow-for-Video-Recognition"><a href="#Deep-Feature-Flow-for-Video-Recognition" class="headerlink" title="Deep Feature Flow for Video Recognition"></a>Deep Feature Flow for Video Recognition</h3><h3 id="实验进展"><a href="#实验进展" class="headerlink" title="实验进展"></a>实验进展</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/09/1.11周五 报告三/" data-id="cjqp9j4xv0000l6yxj5ywkrpr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-1.8周二 报告二" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/09/1.8周二 报告二/" class="article-date">
-  <time datetime="2019-01-09T14:11:55.096Z" itemprop="datePublished">2019-01-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-8周二-报告二"><a href="#1-8周二-报告二" class="headerlink" title="1.8周二 报告二"></a>1.8周二 报告二</h1><p>这些天一直在天河二号上试探，这篇报告记录为数不多的成果。</p>
-<p>这是我在天河上面个人文件夹的目录：</p>
-<p><img src="/home/shycg/.config/Typora/typora-user-images/1546926999148.png" alt="1546926999148"></p>
-<p>其中<code>kitti_dataset</code>是完整数据集，有约90G；<code>kitti_dataset_clip</code>是100M左右的小数据集。</p>
-<p>目前能跑起来的是<strong>clip里的detection</strong>，数据集能完整循环一遍。而处理后的<strong>tracking clip</strong>仍然是原来的错误：</p>
-<blockquote>
-<p>“””<br>Traceback (most recent call last):<br>  File “/home/hk1/anaconda3/lib/python3.6/multiprocessing/pool.py”, line 119, in worker<br>​    result = (True, func(<em>args, **kwds))<br>  File “/home/hk1/anaconda3/lib/python3.6/multiprocessing/pool.py”, line 44, in mapstar<br>​    return list(map(</em>args))<br>  File “/data/hk1/hansx/voxelnet/utils/kitti_loader.py”, line 29, in <strong>call</strong><br>​    ret = aug_data(self.data_tag[load_index], self.data_dir)<br>  File “/data/hk1/hansx/voxelnet/utils/data_aug.py”, line 107, in aug_data<br>​    voxel_dict = process_pointcloud(lidar)<br>  File “/data/hk1/hansx/voxelnet/utils/preprocess.py”, line 56, in process_pointcloud<br>​    coordinate_buffer = np.unique(voxel_index, axis=0)<br>  File “/home/hk1/anaconda3/lib/python3.6/site-packages/numpy/lib/arraysetops.py”, line 217, in unique<br>​    ar = ar.reshape(orig_shape[0], -1)<br>ValueError: cannot reshape array of size 0 into shape (0,newaxis)<br>“””</p>
-<p>The above exception was the direct cause of the following exception:</p>
-<p>Traceback (most recent call last):<br>  File “train.py”, line 204, in <module><br>​    tf.app.run(main)<br>  File “/home/hk1/anaconda3/lib/python3.6/site-packages/tensorflow/python/platform/app.py”, line 126, in run<br>​    _sys.exit(main(argv))<br>  File “train.py”, line 101, in main<br>​    for batch in iterate_data(train_dir, shuffle=True, aug=True, is_testset=False, batch_size=4 * cfg.GPU_USE_COUNT, multi_gpu_sum=cfg.GPU_USE_COUNT):<br>  File “/data/hk1/hansx/voxelnet/utils/kitti_loader.py”, line 75, in iterate_data<br>​    rets=TRAIN_POOL.map(proc,excerpt)<br>  File “/home/hk1/anaconda3/lib/python3.6/multiprocessing/pool.py”, line 266, in map<br>​    return self._map_async(func, iterable, mapstar, chunksize).get()<br>  File “/home/hk1/anaconda3/lib/python3.6/multiprocessing/pool.py”, line 644, in get<br>​    raise self._value<br>ValueError: cannot reshape array of size 0 into shape (0,newaxis)</module></p>
-</blockquote>
-<p>在完整数据集上跑，detection和tracking都一样，就是什么结果都没有。我在程序从开始到结束都加了输出，但结果里面什么都没有。在clip上跑的时候，通常要过一会才能开始打印epoch和batch，所以我让作业跑了一夜。然而早上起来看，连程序最开始的输出都没有。</p>
-<p>这段时间空闲的节点都有点紧张，我已经用<code>yhalloc</code>预分配了5个节点给自己。不知道是不是只用了1个节点的原因，这我正在跟超算中心咨询。</p>
-<p>现在收到了论文，不可控因素小了很多。接下来的报告会记录这些论文并提出融入本项目的想法。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/09/1.8周二 报告二/" data-id="cjqp9j4y40001l6yxw4a35e7e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/09/bisheriji/" data-id="cjqp9r59t00001qyx2plu8x4x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -197,7 +134,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/09/hello-world/" data-id="cjqp9j4y60002l6yxo6ui4nxv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/09/hello-world/" data-id="cjqp9r5a000011qyxwdf9ppzk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -238,15 +175,7 @@
       <ul>
         
           <li>
-            <a href="/2019/01/09/12.27周四 报告一/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/01/09/1.11周五 报告三/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/01/09/1.8周二 报告二/">(no title)</a>
+            <a href="/2019/01/09/bisheriji/">bisheriji</a>
           </li>
         
           <li>
