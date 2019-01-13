@@ -337,6 +337,8 @@
   
 
   
+    <div class="reading-progress-bar"></div>
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -488,6 +490,35 @@
     
       
     
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>点击打赏，扫码领取红包～</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpeg" alt="韩硕轩 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpeg" alt="韩硕轩 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
     
 
     
@@ -683,7 +714,7 @@
 
   
 </div>
-
+<!--
 
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
 
@@ -695,6 +726,7 @@
 
   <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v6.7.0</div>
 
+-->
 
 
 
@@ -788,6 +820,8 @@
 
 
 
+  
+
 
 
   
@@ -798,6 +832,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
 
 
   
@@ -854,6 +891,13 @@
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 
