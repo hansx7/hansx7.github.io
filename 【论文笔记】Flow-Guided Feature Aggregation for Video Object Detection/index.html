@@ -96,26 +96,29 @@
 
 
 
-  <meta name="description" content="这些天一直在天河二号上试探，这篇报告记录为数不多的成果。 这是我在天河上面个人文件夹的目录：  其中kitti_dataset是完整数据集，有约90G；kitti_dataset_clip是100M左右的小数据集。 目前能跑起来的是clip里的detection，数据集能完整循环一遍。而处理后的tracking clip仍然是原来的错误：  “””Traceback (most recent ca">
+  <meta name="description" content="这篇论文做的工作是利用视频中前后帧的信息来提高当前帧对于目标检测的准确度。 下图是这篇论文的框架，作者也借此说明了本文提出的方法如何提高了目标检测准确度。从图中我们可以看出，当前帧t的那只猫由于某种原因，它的特征没能被机器很好地提取（特征图非常模糊）。但如果让前后10帧——这些帧对于它的特征提取很充分——的特征图通过一个光流场融合到当前帧来辅助检测，将大大提高检测效果（右上角图）。  作者用下面这">
+<meta name="keywords" content="视觉,深度学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2. 1月8日周二">
-<meta property="og:url" content="http://yoursite.com/2. 1月8日周二/index.html">
+<meta property="og:title" content="【论文笔记】Flow-Guided Feature Aggregation for Video Object Detection">
+<meta property="og:url" content="http://yoursite.com/【论文笔记】Flow-Guided Feature Aggregation for Video Object Detection/index.html">
 <meta property="og:site_name" content="栈空">
-<meta property="og:description" content="这些天一直在天河二号上试探，这篇报告记录为数不多的成果。 这是我在天河上面个人文件夹的目录：  其中kitti_dataset是完整数据集，有约90G；kitti_dataset_clip是100M左右的小数据集。 目前能跑起来的是clip里的detection，数据集能完整循环一遍。而处理后的tracking clip仍然是原来的错误：  “””Traceback (most recent ca">
+<meta property="og:description" content="这篇论文做的工作是利用视频中前后帧的信息来提高当前帧对于目标检测的准确度。 下图是这篇论文的框架，作者也借此说明了本文提出的方法如何提高了目标检测准确度。从图中我们可以看出，当前帧t的那只猫由于某种原因，它的特征没能被机器很好地提取（特征图非常模糊）。但如果让前后10帧——这些帧对于它的特征提取很充分——的特征图通过一个光流场融合到当前帧来辅助检测，将大大提高检测效果（右上角图）。  作者用下面这">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://user-images.githubusercontent.com/30231550/50906744-bce43880-1460-11e9-816c-b7b7b71de6d3.png">
-<meta property="og:updated_time" content="2019-01-10T13:10:33.396Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/30231550/51428810-0263eb00-1c43-11e9-9b98-aa2291c6adad.PNG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/30231550/51428811-042dae80-1c43-11e9-9d35-ca38448569fb.PNG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/30231550/51428815-07289f00-1c43-11e9-8b46-469137374807.PNG">
+<meta property="og:updated_time" content="2019-01-21T07:57:46.408Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2. 1月8日周二">
-<meta name="twitter:description" content="这些天一直在天河二号上试探，这篇报告记录为数不多的成果。 这是我在天河上面个人文件夹的目录：  其中kitti_dataset是完整数据集，有约90G；kitti_dataset_clip是100M左右的小数据集。 目前能跑起来的是clip里的detection，数据集能完整循环一遍。而处理后的tracking clip仍然是原来的错误：  “””Traceback (most recent ca">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/30231550/50906744-bce43880-1460-11e9-816c-b7b7b71de6d3.png">
+<meta name="twitter:title" content="【论文笔记】Flow-Guided Feature Aggregation for Video Object Detection">
+<meta name="twitter:description" content="这篇论文做的工作是利用视频中前后帧的信息来提高当前帧对于目标检测的准确度。 下图是这篇论文的框架，作者也借此说明了本文提出的方法如何提高了目标检测准确度。从图中我们可以看出，当前帧t的那只猫由于某种原因，它的特征没能被机器很好地提取（特征图非常模糊）。但如果让前后10帧——这些帧对于它的特征提取很充分——的特征图通过一个光流场融合到当前帧来辅助检测，将大大提高检测效果（右上角图）。  作者用下面这">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/30231550/51428810-0263eb00-1c43-11e9-9b98-aa2291c6adad.PNG">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2. 1月8日周二/">
+  <link rel="canonical" href="http://yoursite.com/【论文笔记】Flow-Guided Feature Aggregation for Video Object Detection/">
 
 
 
@@ -125,7 +128,7 @@
   };
 </script>
 
-  <title>2. 1月8日周二 | 栈空</title>
+  <title>【论文笔记】Flow-Guided Feature Aggregation for Video Object Detection | 栈空</title>
   
 
 
@@ -347,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2. 1月8日周二/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/【论文笔记】Flow-Guided Feature Aggregation for Video Object Detection/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩硕轩">
@@ -364,7 +367,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2. 1月8日周二
+          <h1 class="post-title" itemprop="name headline">【论文笔记】Flow-Guided Feature Aggregation for Video Object Detection
 
               
             
@@ -390,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2019-01-08 20:48:07" itemprop="dateCreated datePublished" datetime="2019-01-08T20:48:07+08:00">2019-01-08</time>
+              <time title="创建时间：2019-01-18 17:49:00" itemprop="dateCreated datePublished" datetime="2019-01-18T17:49:00+08:00">2019-01-18</time>
             
 
             
@@ -407,7 +410,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-10 21:10:33" itemprop="dateModified" datetime="2019-01-10T21:10:33+08:00">2019-01-10</time>
+                <time title="修改时间：2019-01-21 15:57:46" itemprop="dateModified" datetime="2019-01-21T15:57:46+08:00">2019-01-21</time>
               
             
           </span>
@@ -424,7 +427,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/毕设日记/" itemprop="url" rel="index"><span itemprop="name">毕设日记</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/论文笔记/" itemprop="url" rel="index"><span itemprop="name">论文笔记</span></a></span>
 
                 
                 
@@ -465,22 +468,15 @@
       
 
       
-        <p>这些天一直在天河二号上试探，这篇报告记录为数不多的成果。</p>
-<p>这是我在天河上面个人文件夹的目录：</p>
-<p><img src="https://user-images.githubusercontent.com/30231550/50906744-bce43880-1460-11e9-816c-b7b7b71de6d3.png" alt="1546926999148"></p>
-<p>其中<code>kitti_dataset</code>是完整数据集，有约90G；<code>kitti_dataset_clip</code>是100M左右的小数据集。</p>
-<p>目前能跑起来的是<strong>clip里的detection</strong>，数据集能完整循环一遍。而处理后的<strong>tracking clip</strong>仍然是原来的错误：</p>
-<blockquote>
-<p>“””<br>Traceback (most recent call last):<br>  File “/home/hk1/anaconda3/lib/python3.6/multiprocessing/pool.py”, line 119, in worker<br>​    result = (True, func(<em>args, **kwds))<br>  File “/home/hk1/anaconda3/lib/python3.6/multiprocessing/pool.py”, line 44, in mapstar<br>​    return list(map(</em>args))<br>  File “/data/hk1/hansx/voxelnet/utils/kitti_loader.py”, line 29, in <strong>call</strong><br>​    ret = aug_data(self.data_tag[load_index], self.data_dir)<br>  File “/data/hk1/hansx/voxelnet/utils/data_aug.py”, line 107, in aug_data<br>​    voxel_dict = process_pointcloud(lidar)<br>  File “/data/hk1/hansx/voxelnet/utils/preprocess.py”, line 56, in process_pointcloud<br>​    coordinate_buffer = np.unique(voxel_index, axis=0)<br>  File “/home/hk1/anaconda3/lib/python3.6/site-packages/numpy/lib/arraysetops.py”, line 217, in unique<br>​    ar = ar.reshape(orig_shape[0], -1)<br>ValueError: cannot reshape array of size 0 into shape (0,newaxis)<br>“””</p>
-<p>The above exception was the direct cause of the following exception:</p>
-<p>Traceback (most recent call last):<br>  File “train.py”, line 204, in <module><br>​    tf.app.run(main)<br>  File “/home/hk1/anaconda3/lib/python3.6/site-packages/tensorflow/python/platform/app.py”, line 126, in run<br>​    _sys.exit(main(argv))<br>  File “train.py”, line 101, in main<br>​    for batch in iterate_data(train_dir, shuffle=True, aug=True, is_testset=False, batch_size=4 * cfg.GPU_USE_COUNT, multi_gpu_sum=cfg.GPU_USE_COUNT):<br>  File “/data/hk1/hansx/voxelnet/utils/kitti_loader.py”, line 75, in iterate_data<br>​    rets=TRAIN_POOL.map(proc,excerpt)<br>  File “/home/hk1/anaconda3/lib/python3.6/multiprocessing/pool.py”, line 266, in map<br>​    return self._map_async(func, iterable, mapstar, chunksize).get()<br>  File “/home/hk1/anaconda3/lib/python3.6/multiprocessing/pool.py”, line 644, in get<br>​    raise self._value<br>ValueError: cannot reshape array of size 0 into shape (0,newaxis)</module></p>
-</blockquote>
-<p>在完整数据集上跑，detection和tracking都一样，就是什么结果都没有。我在程序从开始到结束都加了输出，但结果里面什么都没有。在clip上跑的时候，通常要过一会才能开始打印epoch和batch，所以我让作业跑了一夜。然而早上起来看，连程序最开始的输出都没有。</p>
-<p>这段时间空闲的节点都有点紧张，我已经用<code>yhalloc</code>预分配了5个节点给自己。不知道是不是只用了1个节点的原因，这我正在跟超算中心咨询。</p>
-<p>现在收到了论文，不可控因素小了很多。接下来的报告会记录这些论文并提出融入本项目的想法。</p>
-<blockquote>
-<p>谁要是从来未曾听到过沉睡着的年轻女人的依稀可闻的鼻息声，并因此而激动过，谁就不懂得何为温柔。 ——《金蔷薇·珍贵的尘土》</p>
-</blockquote>
+        <p>这篇论文做的工作是利用视频中前后帧的信息来提高当前帧对于目标检测的准确度。</p>
+<p>下图是这篇论文的框架，作者也借此说明了本文提出的方法如何提高了目标检测准确度。从图中我们可以看出，当前帧<code>t</code>的那只猫由于某种原因，它的特征没能被机器很好地提取（特征图非常模糊）。但如果让<strong>前后10帧</strong>——这些帧对于它的特征提取很充分——的特征图通过一个光流场融合到当前帧来辅助检测，将大大提高检测效果（右上角图）。</p>
+<p><img src="https://user-images.githubusercontent.com/30231550/51428810-0263eb00-1c43-11e9-9b98-aa2291c6adad.PNG" alt=""></p>
+<p>作者用下面这张伪代码图总结了算法的流程。首先是初始化了<code>k+1</code>帧的图像，叫做<code>feature buffer</code>，也就是对这些帧都用卷积网络提取了特征。做完初始化之后，再从第一帧开始，逐帧访问它的邻近帧（第5/6行的循环），并获取特征的映射$f_{j\rightarrow i}$（利用上一篇论文<code>Deep Feature Flow for Video Recognition</code>的方法）、嵌入的特征$f_{j\rightarrow i}^e, f_i^e$（这里还不是很理解什么是嵌入特征，后续弄清楚再更）、权重函数（每一帧在当前帧特征计算中所加的权）。在完成了对邻近帧的特征采集之后，用<code>第11行</code>的公式，也是全文核心的公式来进行特征融合并做检测。最后是对下一帧没处理过的图像提取特征，毕竟整个流程要持续下去。</p>
+<p><img src="https://user-images.githubusercontent.com/30231550/51428811-042dae80-1c43-11e9-9d35-ca38448569fb.PNG" alt=""></p>
+<p>看到后面发现可以回答前面的问题了。<strong>嵌入特征Embedding network</strong>由三层随机初始化的卷积层组成。因此可以理解$f_{j\rightarrow i}^e, f_i^e$分别代表了第$j$帧映射的特征与当前帧的特征，进而权重函数由<strong>cosine相似度</strong>决定（上图第9行公式）。</p>
+<p>从结果来看，本方法在mAP上确实比传统方法有一定的提升，但也不可否认它的速度慢了一些。</p>
+<p><img src="https://user-images.githubusercontent.com/30231550/51428815-07289f00-1c43-11e9-8b46-469137374807.PNG" alt=""></p>
+<p>和上一篇<code>Deep Feature Flow for Video Recognition</code>相比，本文更注重准确度，所以对于每一帧都做了特征提取，而不像deep feature flow中那样只做关键帧的。其实所有的方法都不得不做<strong>tradeoff between accuracy and speed</strong>，没有两全之策。</p>
 
       
     </div>
@@ -531,6 +527,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/视觉/" rel="tag"># 视觉</a>
+          
+            <a href="/tags/深度学习/" rel="tag"># 深度学习</a>
+          
+        </div>
+      
 
       
       
@@ -540,8 +544,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/1. 12月27日周四/" rel="next" title="1. 12月27日周四">
-                <i class="fa fa-chevron-left"></i> 1. 12月27日周四
+              <a href="/【论文笔记】Deep-Feature-Flow-for-Video-Recognition/" rel="next" title="【论文笔记】Deep Feature Flow for Video Recognition">
+                <i class="fa fa-chevron-left"></i> 【论文笔记】Deep Feature Flow for Video Recognition
               </a>
             
           </div>
@@ -550,8 +554,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/3. 1月12日周六/" rel="prev" title="3. 1月12日周六">
-                3. 1月12日周六 <i class="fa fa-chevron-right"></i>
+              <a href="/【论文笔记】Towards High Performance Video Object Detection/" rel="prev" title="【论文笔记】Towards High Performance Video Object Detection">
+                【论文笔记】Towards High Performance Video Object Detection <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

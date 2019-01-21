@@ -96,26 +96,32 @@
 
 
 
-  <meta name="description" content="这些天一直在天河二号上试探，这篇报告记录为数不多的成果。 这是我在天河上面个人文件夹的目录：  其中kitti_dataset是完整数据集，有约90G；kitti_dataset_clip是100M左右的小数据集。 目前能跑起来的是clip里的detection，数据集能完整循环一遍。而处理后的tracking clip仍然是原来的错误：  “””Traceback (most recent ca">
+  <meta name="description" content="前两篇论文Deep Feature Flow for Video Recognition和Flow-Guided Feature Aggregation for Video Object Detection，它们在视频物体检测的准确度和速度之间做了妥协（tradeoff between accuracy and speed），而这篇论文，作者在摘要中就提到：  We steadily push f">
+<meta name="keywords" content="视觉,深度学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2. 1月8日周二">
-<meta property="og:url" content="http://yoursite.com/2. 1月8日周二/index.html">
+<meta property="og:title" content="【论文笔记】Towards High Performance Video Object Detection">
+<meta property="og:url" content="http://yoursite.com/【论文笔记】Towards High Performance Video Object Detection/index.html">
 <meta property="og:site_name" content="栈空">
-<meta property="og:description" content="这些天一直在天河二号上试探，这篇报告记录为数不多的成果。 这是我在天河上面个人文件夹的目录：  其中kitti_dataset是完整数据集，有约90G；kitti_dataset_clip是100M左右的小数据集。 目前能跑起来的是clip里的detection，数据集能完整循环一遍。而处理后的tracking clip仍然是原来的错误：  “””Traceback (most recent ca">
+<meta property="og:description" content="前两篇论文Deep Feature Flow for Video Recognition和Flow-Guided Feature Aggregation for Video Object Detection，它们在视频物体检测的准确度和速度之间做了妥协（tradeoff between accuracy and speed），而这篇论文，作者在摘要中就提到：  We steadily push f">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://user-images.githubusercontent.com/30231550/50906744-bce43880-1460-11e9-816c-b7b7b71de6d3.png">
-<meta property="og:updated_time" content="2019-01-10T13:10:33.396Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/30231550/51442472-14fc2400-1d18-11e9-8c93-c691893fb874.PNG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/30231550/51442473-175e7e00-1d18-11e9-83a4-be162030b741.PNG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/30231550/51442474-19c0d800-1d18-11e9-9084-32430606962a.PNG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/30231550/51442475-1b8a9b80-1d18-11e9-84d6-c37679c16e39.PNG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/30231550/51442477-1f1e2280-1d18-11e9-8209-2e776f1b01bd.PNG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/30231550/51442476-1cbbc880-1d18-11e9-867b-ec587ceffcbd.PNG">
+<meta property="og:updated_time" content="2019-01-21T07:56:55.166Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2. 1月8日周二">
-<meta name="twitter:description" content="这些天一直在天河二号上试探，这篇报告记录为数不多的成果。 这是我在天河上面个人文件夹的目录：  其中kitti_dataset是完整数据集，有约90G；kitti_dataset_clip是100M左右的小数据集。 目前能跑起来的是clip里的detection，数据集能完整循环一遍。而处理后的tracking clip仍然是原来的错误：  “””Traceback (most recent ca">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/30231550/50906744-bce43880-1460-11e9-816c-b7b7b71de6d3.png">
+<meta name="twitter:title" content="【论文笔记】Towards High Performance Video Object Detection">
+<meta name="twitter:description" content="前两篇论文Deep Feature Flow for Video Recognition和Flow-Guided Feature Aggregation for Video Object Detection，它们在视频物体检测的准确度和速度之间做了妥协（tradeoff between accuracy and speed），而这篇论文，作者在摘要中就提到：  We steadily push f">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/30231550/51442472-14fc2400-1d18-11e9-8c93-c691893fb874.PNG">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2. 1月8日周二/">
+  <link rel="canonical" href="http://yoursite.com/【论文笔记】Towards High Performance Video Object Detection/">
 
 
 
@@ -125,7 +131,7 @@
   };
 </script>
 
-  <title>2. 1月8日周二 | 栈空</title>
+  <title>【论文笔记】Towards High Performance Video Object Detection | 栈空</title>
   
 
 
@@ -347,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2. 1月8日周二/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/【论文笔记】Towards High Performance Video Object Detection/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="韩硕轩">
@@ -364,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2. 1月8日周二
+          <h1 class="post-title" itemprop="name headline">【论文笔记】Towards High Performance Video Object Detection
 
               
             
@@ -390,24 +396,12 @@
                 
               
 
-              <time title="创建时间：2019-01-08 20:48:07" itemprop="dateCreated datePublished" datetime="2019-01-08T20:48:07+08:00">2019-01-08</time>
+              <time title="创建时间：2019-01-21 17:49:00 / 修改时间：15:56:55" itemprop="dateCreated datePublished" datetime="2019-01-21T17:49:00+08:00">2019-01-21</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-10 21:10:33" itemprop="dateModified" datetime="2019-01-10T21:10:33+08:00">2019-01-10</time>
               
             
           </span>
@@ -424,7 +418,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/毕设日记/" itemprop="url" rel="index"><span itemprop="name">毕设日记</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/论文笔记/" itemprop="url" rel="index"><span itemprop="name">论文笔记</span></a></span>
 
                 
                 
@@ -465,22 +459,31 @@
       
 
       
-        <p>这些天一直在天河二号上试探，这篇报告记录为数不多的成果。</p>
-<p>这是我在天河上面个人文件夹的目录：</p>
-<p><img src="https://user-images.githubusercontent.com/30231550/50906744-bce43880-1460-11e9-816c-b7b7b71de6d3.png" alt="1546926999148"></p>
-<p>其中<code>kitti_dataset</code>是完整数据集，有约90G；<code>kitti_dataset_clip</code>是100M左右的小数据集。</p>
-<p>目前能跑起来的是<strong>clip里的detection</strong>，数据集能完整循环一遍。而处理后的<strong>tracking clip</strong>仍然是原来的错误：</p>
+        <p>前两篇论文<code>Deep Feature Flow for Video Recognition</code>和<code>Flow-Guided Feature Aggregation for Video Object Detection</code>，它们在视频物体检测的准确度和速度之间做了妥协（tradeoff between accuracy and speed），而这篇论文，作者在摘要中就提到：</p>
 <blockquote>
-<p>“””<br>Traceback (most recent call last):<br>  File “/home/hk1/anaconda3/lib/python3.6/multiprocessing/pool.py”, line 119, in worker<br>​    result = (True, func(<em>args, **kwds))<br>  File “/home/hk1/anaconda3/lib/python3.6/multiprocessing/pool.py”, line 44, in mapstar<br>​    return list(map(</em>args))<br>  File “/data/hk1/hansx/voxelnet/utils/kitti_loader.py”, line 29, in <strong>call</strong><br>​    ret = aug_data(self.data_tag[load_index], self.data_dir)<br>  File “/data/hk1/hansx/voxelnet/utils/data_aug.py”, line 107, in aug_data<br>​    voxel_dict = process_pointcloud(lidar)<br>  File “/data/hk1/hansx/voxelnet/utils/preprocess.py”, line 56, in process_pointcloud<br>​    coordinate_buffer = np.unique(voxel_index, axis=0)<br>  File “/home/hk1/anaconda3/lib/python3.6/site-packages/numpy/lib/arraysetops.py”, line 217, in unique<br>​    ar = ar.reshape(orig_shape[0], -1)<br>ValueError: cannot reshape array of size 0 into shape (0,newaxis)<br>“””</p>
-<p>The above exception was the direct cause of the following exception:</p>
-<p>Traceback (most recent call last):<br>  File “train.py”, line 204, in <module><br>​    tf.app.run(main)<br>  File “/home/hk1/anaconda3/lib/python3.6/site-packages/tensorflow/python/platform/app.py”, line 126, in run<br>​    _sys.exit(main(argv))<br>  File “train.py”, line 101, in main<br>​    for batch in iterate_data(train_dir, shuffle=True, aug=True, is_testset=False, batch_size=4 * cfg.GPU_USE_COUNT, multi_gpu_sum=cfg.GPU_USE_COUNT):<br>  File “/data/hk1/hansx/voxelnet/utils/kitti_loader.py”, line 75, in iterate_data<br>​    rets=TRAIN_POOL.map(proc,excerpt)<br>  File “/home/hk1/anaconda3/lib/python3.6/multiprocessing/pool.py”, line 266, in map<br>​    return self._map_async(func, iterable, mapstar, chunksize).get()<br>  File “/home/hk1/anaconda3/lib/python3.6/multiprocessing/pool.py”, line 644, in get<br>​    raise self._value<br>ValueError: cannot reshape array of size 0 into shape (0,newaxis)</module></p>
+<p>We steadily push forward the performance envelope (speed-accuracy tradeoff), towards high performance video object detection.</p>
 </blockquote>
-<p>在完整数据集上跑，detection和tracking都一样，就是什么结果都没有。我在程序从开始到结束都加了输出，但结果里面什么都没有。在clip上跑的时候，通常要过一会才能开始打印epoch和batch，所以我让作业跑了一夜。然而早上起来看，连程序最开始的输出都没有。</p>
-<p>这段时间空闲的节点都有点紧张，我已经用<code>yhalloc</code>预分配了5个节点给自己。不知道是不是只用了1个节点的原因，这我正在跟超算中心咨询。</p>
-<p>现在收到了论文，不可控因素小了很多。接下来的报告会记录这些论文并提出融入本项目的想法。</p>
-<blockquote>
-<p>谁要是从来未曾听到过沉睡着的年轻女人的依稀可闻的鼻息声，并因此而激动过，谁就不懂得何为温柔。 ——《金蔷薇·珍贵的尘土》</p>
-</blockquote>
+<p>在这篇论文中，作者提出了三种新的方法，并将这三种方法结合成了高性能的检测算法。我们还是先看框架示意图：</p>
+<p><img src="https://user-images.githubusercontent.com/30231550/51442472-14fc2400-1d18-11e9-8c93-c691893fb874.PNG" alt=""></p>
+<p>左边的(a)和(b)分别是前两篇论文中提到的<code>DFF</code>和<code>FGFA</code>，右边的(c1)(c2)(c3)是新提出的三种。我们分别来看：</p>
+<ul>
+<li><p>(c1) recursively aggregation feature for key frames. 它的思路是在相邻两个关键帧之间传递聚合特征。从下面这条公式来看，第$k’$帧的特征聚合了自身计算出来的特征和上一个关键帧传递过来的特征，因而包含了丰富的历史关键信息。</p>
+<p><img src="https://user-images.githubusercontent.com/30231550/51442473-175e7e00-1d18-11e9-83a4-be162030b741.PNG" alt=""></p>
+</li>
+<li><p>(c2) partially update feature for non-key frames. 为了判断从关键帧传播到当前帧的特征是否合适，作者引入了一个跟光流平行的分支网络$Q$。它通过如下公式计算得到：</p>
+<p><img src="https://user-images.githubusercontent.com/30231550/51442474-19c0d800-1d18-11e9-9084-32430606962a.PNG" alt=""></p>
+<p>如果这里的$Q_{k\rightarrow i}$小于一个阈值，则表明传播的特征不够好，需要重新使用$N_{feat}()$来提取特征。随后对于每个非关键帧，也会采用(c1)的方法从前向后聚合特征。</p>
+</li>
+<li><p>(c3) temporally-adaptive key frame scheduling. 这一部分的目的是优化关键帧选取。通过下面这条公式，所有小于等于阈值$\tau$的点的平均值大于阈值$\gamma$的传播被认为不合适，此时当前帧将被标记为关键帧。</p>
+<p><img src="https://user-images.githubusercontent.com/30231550/51442475-1b8a9b80-1d18-11e9-84d6-c37679c16e39.PNG" alt=""></p>
+</li>
+</ul>
+<p>在整合三个小部分的时候，作者使用不同的赋值$Q$的方法来简化公式表达：</p>
+<p><img src="https://user-images.githubusercontent.com/30231550/51442477-1f1e2280-1d18-11e9-8209-2e776f1b01bd.PNG" alt=""></p>
+<p>在关键帧上让$Q=-\infin$，意思是传播的非常差；而在非关键帧则初始化$Q$为$+\infin$。</p>
+<p>接下来看伪代码。这份伪代码写的比前两次长，但是其实就是整合了之前的小部分，这里就不细说了。</p>
+<p><img src="https://user-images.githubusercontent.com/30231550/51442476-1cbbc880-1d18-11e9-867b-ec587ceffcbd.PNG" alt=""></p>
+<p>最后总结这个框架，我认为它没有比前两篇<code>Deep Feature Flow for Video Recognition</code>和<code>Flow-Guided Feature Aggregation for Video Object Detection</code>在各自的强项上有较大突破，但它的优点在于可以灵活调整速度与准确度之间的<strong>tradeoff</strong>。</p>
 
       
     </div>
@@ -531,6 +534,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/视觉/" rel="tag"># 视觉</a>
+          
+            <a href="/tags/深度学习/" rel="tag"># 深度学习</a>
+          
+        </div>
+      
 
       
       
@@ -540,8 +551,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/1. 12月27日周四/" rel="next" title="1. 12月27日周四">
-                <i class="fa fa-chevron-left"></i> 1. 12月27日周四
+              <a href="/【论文笔记】Flow-Guided Feature Aggregation for Video Object Detection/" rel="next" title="【论文笔记】Flow-Guided Feature Aggregation for Video Object Detection">
+                <i class="fa fa-chevron-left"></i> 【论文笔记】Flow-Guided Feature Aggregation for Video Object Detection
               </a>
             
           </div>
@@ -549,10 +560,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/3. 1月12日周六/" rel="prev" title="3. 1月12日周六">
-                3. 1月12日周六 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
