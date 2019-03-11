@@ -96,19 +96,19 @@
 
 
 
-  <meta name="description" content="明天导师就要找我聊天了。今天完成了一个阶段，记录一下，到时候好跟凯哥交代。 ###实现对象 由于在Convolutional Middle Layer过后，我们需要将相邻两帧被提取的特征拿做correlation，所以这就要求在训练开始前，一个couple内的两帧数据增强方式是一样的。为此我将数据读入方式从逐帧读入改为打包读入，即$[frame_0, frame_1], [frame_1, fra">
+  <meta name="description" content="明天导师就要找我聊天了。今天完成了一个阶段，记录一下，到时候好跟凯哥交代。 实现对象由于在Convolutional Middle Layer过后，我们需要将相邻两帧被提取的特征拿做correlation，所以这就要求在训练开始前，一个couple内的两帧数据增强方式是一样的。为此我将数据读入方式从逐帧读入改为打包读入，即$[frame_0, frame_1], [frame_1, frame_2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2月26日周二">
 <meta property="og:url" content="http://yoursite.com/7. 2月26日周二/index.html">
 <meta property="og:site_name" content="栈空">
-<meta property="og:description" content="明天导师就要找我聊天了。今天完成了一个阶段，记录一下，到时候好跟凯哥交代。 ###实现对象 由于在Convolutional Middle Layer过后，我们需要将相邻两帧被提取的特征拿做correlation，所以这就要求在训练开始前，一个couple内的两帧数据增强方式是一样的。为此我将数据读入方式从逐帧读入改为打包读入，即$[frame_0, frame_1], [frame_1, fra">
+<meta property="og:description" content="明天导师就要找我聊天了。今天完成了一个阶段，记录一下，到时候好跟凯哥交代。 实现对象由于在Convolutional Middle Layer过后，我们需要将相邻两帧被提取的特征拿做correlation，所以这就要求在训练开始前，一个couple内的两帧数据增强方式是一样的。为此我将数据读入方式从逐帧读入改为打包读入，即$[frame_0, frame_1], [frame_1, frame_2">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-images.githubusercontent.com/30231550/53398598-f1965a00-39e4-11e9-9ffa-e873635286a7.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/30231550/53399178-661dc880-39e6-11e9-89e6-70ff29c6e641.png">
-<meta property="og:updated_time" content="2019-02-26T08:50:28.393Z">
+<meta property="og:updated_time" content="2019-03-02T14:38:50.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2月26日周二">
-<meta name="twitter:description" content="明天导师就要找我聊天了。今天完成了一个阶段，记录一下，到时候好跟凯哥交代。 ###实现对象 由于在Convolutional Middle Layer过后，我们需要将相邻两帧被提取的特征拿做correlation，所以这就要求在训练开始前，一个couple内的两帧数据增强方式是一样的。为此我将数据读入方式从逐帧读入改为打包读入，即$[frame_0, frame_1], [frame_1, fra">
+<meta name="twitter:description" content="明天导师就要找我聊天了。今天完成了一个阶段，记录一下，到时候好跟凯哥交代。 实现对象由于在Convolutional Middle Layer过后，我们需要将相邻两帧被提取的特征拿做correlation，所以这就要求在训练开始前，一个couple内的两帧数据增强方式是一样的。为此我将数据读入方式从逐帧读入改为打包读入，即$[frame_0, frame_1], [frame_1, frame_2">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/30231550/53398598-f1965a00-39e4-11e9-9ffa-e873635286a7.png">
 
 
@@ -391,7 +391,7 @@
                 
               
 
-              <time title="创建时间：2019-02-26 16:50:28" itemprop="dateCreated datePublished" datetime="2019-02-26T16:50:28+08:00">2019-02-26</time>
+              <time title="创建时间：2019-03-02 22:38:50" itemprop="dateCreated datePublished" datetime="2019-03-02T22:38:50+08:00">2019-03-02</time>
             
 
             
@@ -451,8 +451,7 @@
 
       
         <p>明天导师就要找我聊天了。今天完成了一个阶段，记录一下，到时候好跟凯哥交代。</p>
-<p>###实现对象</p>
-<p>由于在<code>Convolutional Middle Layer</code>过后，我们需要将相邻两帧被提取的特征拿做<code>correlation</code>，所以这就要求在训练开始前，<strong>一个couple内的两帧数据增强方式是一样的</strong>。为此我将数据读入方式从逐帧读入改为打包读入，即$[frame_0, frame_1], [frame_1, frame_2]$这样。</p>
+<h3 id="实现对象"><a href="#实现对象" class="headerlink" title="实现对象"></a>实现对象</h3><p>由于在<code>Convolutional Middle Layer</code>过后，我们需要将相邻两帧被提取的特征拿做<code>correlation</code>，所以这就要求在训练开始前，<strong>一个couple内的两帧数据增强方式是一样的</strong>。为此我将数据读入方式从逐帧读入改为打包读入，即$[frame_0, frame_1], [frame_1, frame_2]$这样。</p>
 <h3 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h3><p>首先是对数据集的处理。我沿用之前将<code>tracking</code>改成<code>detection</code>的代码，只不过稍加改动，将命名从按index改为scene+index，还是六位数：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># '&#123;:0&gt;6d&#125;.png'.format(index)              # before</span></span><br><span class="line"><span class="string">'&#123;:0&gt;2d&#125;&#123;:0&gt;4d&#125;.png'</span>.format(scene, index)  <span class="comment"># after</span></span><br></pre></td></tr></table></figure>
 <p>然后是读入，以<code>rgb</code>为例：</p>
@@ -463,8 +462,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ret = []</span><br><span class="line">for tag in tags:</span><br><span class="line">    ...</span><br><span class="line">    ret.append()</span><br><span class="line">return ret</span><br></pre></td></tr></table></figure>
 <p>如此便完成了输入的修改。把<code>batch_size</code>设为1之后，即可确保每次输入的是一个couple的相邻两帧，打印出来是这样的：</p>
 <p><img src="https://user-images.githubusercontent.com/30231550/53399178-661dc880-39e6-11e9-89e6-70ff29c6e641.png" alt=""></p>
-<p>###小瑕疵</p>
-<p><em>源码采用多进程库来实现数据增强，导致进程池里所有进程共享一组增强随机数。增强之后，每四个batch的增强方式是一样的。如果不采用多进程，则batch_time变长，整体效率降低。目前<strong>仍然采用多进程</strong>，因为虽然每四个batch采用相同的增强，从整体上来看还是足够随机的，不会很影响效果。</em></p>
+<h3 id="小瑕疵"><a href="#小瑕疵" class="headerlink" title="小瑕疵"></a>小瑕疵</h3><p><em>源码采用多进程库来实现数据增强，导致进程池里所有进程共享一组增强随机数。增强之后，每四个batch的增强方式是一样的。如果不采用多进程，则batch_time变长，整体效率降低。目前<strong>仍然采用多进程</strong>，因为虽然每四个batch采用相同的增强，从整体上来看还是足够随机的，不会很影响效果。</em></p>
 
       
     </div>
@@ -524,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/我为什么还在看NBA/" rel="next" title="我为什么还在看NBA">
-                <i class="fa fa-chevron-left"></i> 我为什么还在看NBA
+              <a href="/用一个医学数据集画桑基图/" rel="next" title="用一个医学数据集画桑基图">
+                <i class="fa fa-chevron-left"></i> 用一个医学数据集画桑基图
               </a>
             
           </div>
@@ -534,8 +532,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/老鹰-111-119-火箭/" rel="prev" title="老鹰 111-119 火箭">
-                老鹰 111-119 火箭 <i class="fa fa-chevron-right"></i>
+              <a href="/8. 3月7日周四/" rel="prev" title="3月7日周四">
+                3月7日周四 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -608,7 +606,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -631,7 +629,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -652,7 +652,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -688,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现方法"><span class="nav-number">1.</span> <span class="nav-text">实现方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现对象"><span class="nav-number">1.</span> <span class="nav-text">实现对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现方法"><span class="nav-number">2.</span> <span class="nav-text">实现方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小瑕疵"><span class="nav-number">3.</span> <span class="nav-text">小瑕疵</span></a></li></ol></div>
             
 
           </div>
@@ -900,6 +902,43 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
   
 
 

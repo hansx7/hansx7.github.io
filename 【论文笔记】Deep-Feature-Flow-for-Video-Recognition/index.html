@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://user-images.githubusercontent.com/30231550/51069951-db6e4d80-1673-11e9-8d7d-25f9f4f6ff7e.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/30231550/51070630-67d23d80-167f-11e9-873f-a8aa5447445f.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/30231550/51071487-9276c300-168c-11e9-8b50-62d6c6e0aea7.png">
-<meta property="og:updated_time" content="2019-01-13T13:22:19.414Z">
+<meta property="og:updated_time" content="2019-03-02T14:41:17.245Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【论文笔记】Deep Feature Flow for Video Recognition">
 <meta name="twitter:description" content="本篇论文（2017）之前的视频物体识别方法，都是逐帧用CNN提取特征信息，然后再用分类网络识别出目标物体。这类方法忽视了帧与帧之前的关联性，因而造成极大的时间浪费。作者提出Deep Feature Flow的目的就是利用视频帧与帧之间变化较小这个特点来加速物体识别。 下图展示了本文提出方法与传统方法的区别。左边是逐帧卷积，逐帧分类，右边则是对关键帧卷积然后分类，而对非关键帧，它们的特征可以由关键帧">
@@ -410,7 +410,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-13 21:22:19" itemprop="dateModified" datetime="2019-01-13T21:22:19+08:00">2019-01-13</time>
+                <time title="修改时间：2019-03-02 22:41:17" itemprop="dateModified" datetime="2019-03-02T22:41:17+08:00">2019-03-02</time>
               
             
           </span>
@@ -474,7 +474,7 @@
 <p>下图是该算法的伪代码。它的核心是，对于关键帧使用传统方法，先卷积提取特征，后分类给出结果；非关键帧的特征由关键帧得到，然后分类。</p>
 <p><img src="https://user-images.githubusercontent.com/30231550/51070630-67d23d80-167f-11e9-873f-a8aa5447445f.png" alt=""></p>
 <p>作者表明关键帧是稀疏的，即占总帧数的很小一部分。而流网络比特征提取网络快很多，所以整个框架相比传统方法可以极大加速视频物体识别。</p>
-<p>关于如何判断当前帧是否是关键帧，即伪代码中的<code>is_key_frame()</code>函数是如何实现的，在后面的<strong>Key Frame Scheduling</strong>里面有说明。在那之前，作者花了一定篇幅分析了传播函数的可微性和高效性，我都略读过去了。重点是关键帧的选取上，作者只是采用了定长分配的方法，每隔 $$l$$ 帧取一个关键帧。显然 $$l$$ 太小，从头提取特征的次数就会变多，整体速度就会下降，但准确率就会上升；反之 $$ l $$ 越大，速度就越快，准确率越低。本文没有解决的是如何接近理想情况，即每当画面剧烈变化时选取一次关键帧。</p>
+<p>关于如何判断当前帧是否是关键帧，即伪代码中的<code>is_key_frame()</code>函数是如何实现的，在后面的<strong>Key Frame Scheduling</strong>里面有说明。在那之前，作者花了一定篇幅分析了传播函数的可微性和高效性，我都略读过去了。重点是关键帧的选取上，作者只是采用了定长分配的方法，每隔 <script type="math/tex">l</script> 帧取一个关键帧。显然 <script type="math/tex">l</script> 太小，从头提取特征的次数就会变多，整体速度就会下降，但准确率就会上升；反之 <script type="math/tex">l</script> 越大，速度就越快，准确率越低。本文没有解决的是如何接近理想情况，即每当画面剧烈变化时选取一次关键帧。</p>
 <p>全文最关键的一个公式是特征传播公式：$ f_i = W(f_k, M_{i\rightarrow k}, S_{i \rightarrow k}) $。其中$ f_k $是关键帧的特征图，$ M_{i\rightarrow k} $是二维流场，用的是<code>Sift flow</code>或者<code>CNN</code><em>（存疑：既然这里也有卷积操作，为什么就说运算速度比原来快了呢？）</em>。这里的二维流场的映射结果需要通过双线性插值来取整。最终的$ f_i $是把$ f_k $与<strong>二维流场</strong>和<strong>尺度场</strong>相乘。</p>
 <p>从结果上看，本框架虽然在准确率上低于传统方法，却在速度上提升了很多。下图是官方在Github上给出的对比：</p>
 <p><img src="https://user-images.githubusercontent.com/30231550/51071487-9276c300-168c-11e9-8b50-62d6c6e0aea7.png" alt=""></p>
@@ -621,7 +621,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -644,7 +644,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -665,7 +667,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">4</span>
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -896,6 +900,43 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
   
 
 
